@@ -9,10 +9,7 @@ urlpatterns = [
 
 '''
 SERVER
-    For UnknownChats
     ssh ec2-user@ec2-15-206-73-113.ap-south-1.compute.amazonaws.com
-    For Rentyug
-    ssh -i "my-hp.pem" ec2-user@ec2-3-109-205-56.ap-south-1.compute.amazonaws.com
 
 # SOME IMPORTANT DOCKER GUIDE
 
