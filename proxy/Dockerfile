@@ -26,8 +26,6 @@ RUN mkdir -p /vol/static && \
     chmod +x /run.sh
 
 VOLUME /vol/static
-VOLUME /etc/letsencrypt/live/backend.getcustomer.live/fullchain.pem
-VOLUME /etc/letsencrypt/live/backend.getcustomer.live/privkey.pem
 
 USER nginx
 
