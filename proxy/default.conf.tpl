@@ -21,7 +21,7 @@ server {
     listen 443 ssl;
     ssl on;
 
-    server_name backends.getcustomer.live;
+    server_name backend.getcustomer.live;
     ssl_certificate /etc/letsencrypt/live/backends.getcustomer.live/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/backends.getcustomer.live/privkey.pem;
 
