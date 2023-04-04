@@ -43,6 +43,12 @@ Rnning Django commands or docker command to run django commands like makemigrati
     docker-compose run --rm app sh -c "python manage.py makemigrations"
 
 
+SSL Certificate add command 
+    docker-compose -f docker-compose-deploy.yml run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ -d backend.getcustomer.live
+SSL Certificate add command
+    docker-compose -f docker-compose-deploy.yml run --rm certbot renew
+
+
 '''
 
 

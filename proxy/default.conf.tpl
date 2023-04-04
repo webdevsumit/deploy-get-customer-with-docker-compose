@@ -27,8 +27,6 @@ server {
 
     location /.well-known/acme-challenge/ {
         root /var/www/certbot;
-        include /etc/letsencrypt/options-ssl-nginx.conf;
-        ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
     }
     
     location / {
