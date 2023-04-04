@@ -1,16 +1,6 @@
+
 server {
     listen ${LISTEN_PORT};
-    server_name backend.getcustomer.live;
-
-    # Redirect all HTTP traffic to HTTPS
-    if ($scheme != "https") {
-        return 301 https://$server_name$request_uri;
-    }
-
-    # HTTPS configuration
-    ssl on;
-    ssl_certificate /etc/letsencrypt/live/backend.getcustomer.live/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/backend.getcustomer.live/privkey.pem;
 
     location /static {
         alias /vol/static;
@@ -19,7 +9,7 @@ server {
     location /.well-known/acme-challenge/ {
         root /var/www/certbot;
     }
-    
+
     location / {
         uwsgi_pass              ${APP_HOST}:${APP_PORT};
         include                 /etc/nginx/uwsgi_params;
@@ -29,9 +19,9 @@ server {
 
 server {
     listen 443 ssl;
-    server_name backend.getcustomer.live;
+    ssl on;
 
-    # HTTPS configuration
+    server_name backend.getcustomer.live;
     ssl_certificate /etc/letsencrypt/live/backend.getcustomer.live/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/backend.getcustomer.live/privkey.pem;
 
