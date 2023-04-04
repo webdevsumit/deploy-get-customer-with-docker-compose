@@ -5,8 +5,7 @@ LABEL maintainer="getcustomer.live"
 COPY ./default.conf.tpl /etc/nginx/default.conf.tpl
 COPY ./uwsgi_params /etc/nginx/uwsgi_params
 COPY ./run.sh /run.sh
-COPY /docker-volumes/etc/letsencrypt/live/backend.getcustomer.live/fullchain.pem /etc/letsencrypt/live/backend.getcustomer.live/fullchain.pem
-COPY /docker-volumes/etc/letsencrypt/live/backend.getcustomer.live/privkey.pem /etc/letsencrypt/live/backend.getcustomer.live/privkey.pem
+COPY /docker-volumes/etc/letsencrypt/live /etc/letsencrypt/live
 
 ENV LISTEN_PORT=8000
 ENV APP_HOST=app
