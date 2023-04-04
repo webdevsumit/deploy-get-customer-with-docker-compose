@@ -51,9 +51,15 @@ services:
       - 443:443
     volumes:
       - static-data:/vol/static
-      # - ./nginx/certs/certificate.crt /etc/nginx/certs/certificate.crt
-      # - ./nginx/certs/private.key /etc/nginx/certs/private.key
+      - /docker-volumes/etc/letsencrypt/live/backend.getcustomer.live/fullchain.pem:/etc/letsencrypt/live/backend.getcustomer.live/fullchain.pem
+      - /docker-volumes/etc/letsencrypt/live/backend.getcustomer.live/privkey.pem:/etc/letsencrypt/live/backend.getcustomer.live/privkey.pem
+    networks:
+      - docker-network
 
 volumes:
   postgres-data:
   static-data:
+
+networks:
+  docker-network:
+    driver: bridge
