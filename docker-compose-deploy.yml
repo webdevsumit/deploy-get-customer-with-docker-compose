@@ -53,13 +53,7 @@ services:
       - static-data:/vol/static
       - /docker-volumes/etc/letsencrypt/live/backend.getcustomer.live/fullchain.pem:/etc/letsencrypt/live/backend.getcustomer.live/fullchain.pem
       - /docker-volumes/etc/letsencrypt/live/backend.getcustomer.live/privkey.pem:/etc/letsencrypt/live/backend.getcustomer.live/privkey.pem
-    networks:
-      - docker-network
 
 volumes:
   postgres-data:
   static-data:
-
-networks:
-  docker-network:
-    driver: bridge
