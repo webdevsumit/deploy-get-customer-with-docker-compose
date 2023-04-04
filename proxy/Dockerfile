@@ -17,6 +17,10 @@ RUN mkdir -p /vol/static && \
     chmod 755 /vol/static && \
     mkdir -p /etc/letsencrypt/live/backend.getcustomer.live && \
     chmod 755 /etc/letsencrypt/live/backend.getcustomer.live && \
+    touch /etc/letsencrypt/live/backend.getcustomer.live/fullchain.pem && \
+    chmod nginx:nginx /etc/letsencrypt/live/backend.getcustomer.live/fullchain.pem && \
+    touch /etc/letsencrypt/live/backend.getcustomer.live/privkey.pem && \
+    chmod nginx:nginx /etc/letsencrypt/live/backend.getcustomer.live/privkey.pem && \
     touch /etc/nginx/conf.d/default.conf && \
     chown nginx:nginx /etc/nginx/conf.d/default.conf && \
     chmod +x /run.sh
