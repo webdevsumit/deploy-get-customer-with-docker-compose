@@ -22,8 +22,8 @@ server {
     ssl on;
 
     server_name backend.getcustomer.live;
-    ssl_certificate /etc/letsencrypt/live/backends.getcustomer.live/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/backends.getcustomer.live/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/backend.getcustomer.live/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/backend.getcustomer.live/privkey.pem;
 
     location /static {
         alias /vol/static;
