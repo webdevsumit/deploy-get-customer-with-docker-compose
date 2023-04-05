@@ -15,6 +15,9 @@ USER root
 
 RUN mkdir -p /vol/static && \
     chmod 755 /vol/static && \
+    mkdir -p /etc/letsencrypt/live/ && \
+    chown -R nginx:nginx /etc/letsencrypt/live/ && \
+    chmod 777 /etc/letsencrypt/live/ && \
     touch /etc/nginx/conf.d/default.conf && \
     chown nginx:nginx /etc/nginx/conf.d/default.conf && \
     chmod +x /run.sh
