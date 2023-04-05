@@ -14,14 +14,9 @@ ENV APP_PORT=9000
 USER root
 
 RUN mkdir -p /vol/static && \
-    mkdir -p /etc/letsencrypt/live/backend.getcustomer.live/ && \
     chmod 755 /vol/static && \
     touch /etc/nginx/conf.d/default.conf && \
-    touch /etc/letsencrypt/live/backend.getcustomer.live/fullchain.pem && \
-    touch /etc/letsencrypt/live/backend.getcustomer.live/privkey.pem && \
     chown nginx:nginx /etc/nginx/conf.d/default.conf && \
-    chown nginx:nginx /etc/letsencrypt/live/backend.getcustomer.live/fullchain.pem && \
-    chown nginx:nginx /etc/letsencrypt/live/backend.getcustomer.live/privkey.pem && \
     chmod +x /run.sh
 
 VOLUME /vol/static
